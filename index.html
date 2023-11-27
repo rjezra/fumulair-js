@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
@@ -33,48 +34,78 @@
         <button type="button" class="btn btn-warning" id="valide">Valider</button>
 
     </div>
-
+<div class="contant-2">
     <div class="resultat">
-        <table class="table">
+        <h4>Afaire()</h4>
+        <table class="table" id="myTable">
             <thead>
                 <tr>
                     <th>Titre</th>
                     <th>Description</th>
                     <th>Propriété</th>
                     <th>Estimation</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody id="resultAfficher"></tbody>
         </table>
     </div>
-
-
+    <div class="resultat">
+        <h4>Encours()</h4>
+        <table class="table" id="myTable">
+            <thead>
+                <tr>
+                    <th>Titre</th>
+                    <th>Description</th>
+                    <th>Propriété</th>
+                    <th>Estimation</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="resultAfficher"></tbody>
+        </table>
+    </div>
+    <div class="resultat">
+        <h4>Abloqué()</h4>
+        <table class="table" id="myTable">
+            <thead>
+                <tr>
+                    <th>Titre</th>
+                    <th>Description</th>
+                    <th>Propriété</th>
+                    <th>Estimation</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="resultAfficher"></tbody>
+        </table>
+    </div>
+    <div class="resultat">
+        <h4>Terminé()</h4>
+        <table class="table" id="myTable">
+            <thead>
+                <tr>
+                    <th>Titre</th>
+                    <th>Description</th>
+                    <th>Propriété</th>
+                    <th>Estimation</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="resultAfficher"></tbody>
+        </table>
+    </div>
+</div>
+    
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
-            <div class="modal-content">
+            <div class="modal-content" >
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label for="exampleInputText">Titre</label>
-                        <input type="text" class="form-control" id="titre" placeholder="Enter votre titre">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputText">Description</label>
-                        <input type="text" class="form-control" id="description" placeholder="Enter votre Description">
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleFormControlSelect1">Propriete</label>
-                        <select class="form-control" id="propriete">
-
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="exampleInputText">Estimation</label>
-                        <input type="text" class="form-control" id="estimation" placeholder="Enter votre Description">
-                    </div>
+                <div class="modal-body" id="modalContent">
+                  
 
                 </div>
                 <div class="modal-footer">
@@ -86,7 +117,6 @@
     </div>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/sript.js"></script>
-
 </body>
 
 </html>

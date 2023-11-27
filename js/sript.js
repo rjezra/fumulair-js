@@ -36,7 +36,6 @@ class formulaire {
             this.results.push(result);
         }
         this.afficheResult();
-        this.clearForm();
     }
     afficheResult() {
         this.results.sort((a, b) => {
@@ -52,7 +51,7 @@ class formulaire {
             <td>${result.propriete}</td>
             <td>${result.estimation}</td>
             <td>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal"> Edit </button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="afficherModal(this)"> Edit </button>
             </td>
             `;
             this.resultDiv.appendChild(row);

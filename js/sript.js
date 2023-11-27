@@ -17,25 +17,30 @@ class formulaire {
             inputOption.appendChild(optionElement);
         });
     }
-
     buttonClick() {
         const titre = document.getElementById('titre').value;
         const description = document.getElementById('description').value;
         const propriete = document.getElementById('propriete').value;
         const estimation = document.getElementById('estimation').value;
-        const result = {
-            titre,
-            description,
-            propriete,
-            estimation
-        };
-        if (this.editIndex !== undefined) {
-            this.results[this.editIndex] = result;
-            this.editIndex = undefined;  // Réinitialise l'index d'édition
+        if (titre && description && propriete && estimation) {
+            const result = {
+                titre,
+                description,
+                propriete,
+                estimation
+            };
+
+            if (this.editIndex !== undefined) {
+                this.results[this.editIndex] = result;
+                this.editIndex = undefined;  // Réinitialise l'index d'édition
+            } else {
+                this.results.push(result);
+            }
+
+            this.afficheResult();
         } else {
-            this.results.push(result);
+            alert('Veuillez remplir tous les champs.');
         }
-        this.afficheResult();
     }
     afficheResult() {
         this.results.sort((a, b) => {
@@ -43,7 +48,7 @@ class formulaire {
             return order.indexOf(a.propriete) - order.indexOf(b.propriete);
         });
         this.resultDiv.innerHTML = '';
-        this.results.forEach((result, index) => {
+        this.results.forEach(result => {
             const row = document.createElement('tr');
             row.innerHTML = `
             <td>${result.titre}</td>
@@ -51,11 +56,14 @@ class formulaire {
             <td>${result.propriete}</td>
             <td>${result.estimation}</td>
             <td>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="afficherModal(this)"> Edit </button>
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" "> Edit </button>
             </td>
             `;
             this.resultDiv.appendChild(row);
         });
+        const numberOfElements = this.results.length;
+        const numberOfElementsDisplay = document.getElementById('nbDonne');
+        numberOfElementsDisplay.textContent = `Afaire(  ${numberOfElements}  )`;
     }
 }
 const formulair = new formulaire();

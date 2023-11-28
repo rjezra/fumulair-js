@@ -101,16 +101,35 @@
         <div class="modal-dialog">
             <div class="modal-content" >
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <h5 class="modal-title" id="exampleModalLabel">Informations</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body" id="modalContent">
+
+                    <div class="form-group">
+                        <label for="exampleInputText">Titre</label>
+                        <input type="text" class="form-control" id="modalTitre" placeholder="Enter votre titre">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputText">Description</label>
+                        <input type="text" class="form-control" id="modalDescription" placeholder="Enter votre Description">
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Propriete</label>
+                        <select class="form-control" id="modalPropriete">
+                            
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputText">Estimation</label>
+                        <input type="text" class="form-control" id="modalEstimation" placeholder="Enter votre Description">
+                    </div>
                   
 
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-primary" id="update">Save changes</button>
                 </div>
             </div>
         </div>
